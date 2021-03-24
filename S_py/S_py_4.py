@@ -1,4 +1,4 @@
-# 리스트에 요소 추가 (리스트 중첩, 접근) [append]
+"""# 리스트에 요소 추가 (리스트 중첩, 접근) [append]
 
 a = [1, 2, 3]
 b = [4, 5, 6]
@@ -241,6 +241,8 @@ print(v)
 v[2].extend([333, 444])
 print(v)
 
+print("-" * 50)
+
 # 2차원 리스트 도전문제
 # - 5명의 이름, 전화번호, 나이를 입력 받아서 2차원 리스트에 저장하는 프로그램 작성
 # - 5명의 이름은 반복문으로 처리
@@ -255,6 +257,8 @@ for i in range(5):
 for i in range(5):
     print(w[i])
 
+print("-" * 50)
+
 # 불규칙한 모양의 2차원 리스트 자료 모두 출력
 
 x = [[1, 2, 3], [4, 5], [6, 7, 8, 9, 10]]
@@ -263,3 +267,55 @@ for i in range(len(x)):
     for j in range(len(x[i])):
         print(x[i][j], end=" ")
     print()
+
+print("-" * 50)
+"""
+# 집합 자료형 [set]
+# - 순서가 없음
+# - 중복을 허용 X
+
+aa = set([1, 2, 3, 4, 5])
+bb = set("love")
+cc = set()
+dd = set("I love you")
+
+ran = [8, 1, 6, 4, 8, 4, 6, 5, 4, 8, 7, 6]
+
+print("aa = ", aa)
+print("bb = ", bb)
+print("cc = ", cc)
+print("dd = ", dd, "\n")
+
+print("-" * 50)
+
+# 중복 제거 [set]
+
+print("ran = ", ran)
+print("중복 제거 : set(ran) = ", set(ran))
+
+print("-" * 50)
+
+# 합집함, 교집합, 차집합
+# - [intersection] [union] [difference]
+# - [     |      ] [  &  ] [    -     ]
+
+y = set([1, 2, 3, 4, 5, 6, 7, 8, 9])
+z = set([3, 6, 9, 12, 15])
+
+print("y이 %s 이고 z이 %s 일때, " % (y, z))
+
+print("y와 z의 합집합은 ", y | z)  #     y.intersection(z)
+print("y와 z의 교집합은 ", y & z)  #     y.union(z)
+print("y와 z의 차집합은 ", y - z)  #     y.difference(z)
+print("z와 y의 차집합은 ", y - z)  #     z.difference(y)
+
+print("-" * 50)
+
+# 집합 자료형에 값 추가, 제거
+
+y.add(10)
+print(y)
+y.update([11, 12, 13])
+print(y)
+y.remove(13)
+print(y)
