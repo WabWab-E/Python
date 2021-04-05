@@ -137,3 +137,22 @@ print("-" * 50)
 
 ## 람다 함수 (익명함수) [lambda] - lambda 매개변수 : 리턴값
 # 람다 표현식 자체 호출 시 - (lambda 매개변수 : 리턴값) (인수)
+
+# def
+def plus_ten(x):
+    return x + 10
+
+
+print(list(map(plus_ten, [1, 2, 3])))
+
+# lambda
+print(list(map(lambda x: x + 10, [1, 2, 3])))
+
+# lambda + input
+print(list(map(lambda x: x + 10, map(int, input("수 입력 : ").split()))))
+
+# 람다 함수에는 조건식도 넣을 수 있다
+
+oneToTen = list(range(1, 11))
+
+print(list(map(lambda x: str(x) if x % 2 == 0 else x, oneToTen)))
