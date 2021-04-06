@@ -137,10 +137,10 @@ l = 0
 
 for i in sangmi:
     if k == i:
-        ++l
+        l += 1
         break
     else:
-        ++l
+        l += 1
 
 if l > 5:
     print("리스트에 없는 이름입니다.")

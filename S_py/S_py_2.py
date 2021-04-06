@@ -1,5 +1,5 @@
-list1 = [1,2,3,4,5]
-list2 = ['문자열', 1, 0.1, True]
+list1 = [1, 2, 3, 4, 5]
+list2 = ["문자열", 1, 0.1, True]
 
 print(list1)
 print(list2)
@@ -18,8 +18,8 @@ print(listA)
 print(listB)
 print(listC)
 
-tuple1 = (1,2,3,4,5)
-tuple2 = ('문자열', 1, 0.1, True)
+tuple1 = (1, 2, 3, 4, 5)
+tuple2 = ("문자열", 1, 0.1, True)
 
 tupleA = tuple(range(10))
 tupleB = tuple(range(0, 10, 2))
