@@ -1,321 +1,64 @@
-# 리스트에 요소 추가 (리스트 중첩, 접근) [append]
+## 문자열 형식화 ##
 
-a = [1, 2, 3]
-b = [4, 5, 6]
-c = [7, 8, 9]
-a.append(b)
-b.append(c)
-print(a)
-print(a[3])
-print(a[3][3])
+# 형식지정 문자열 [%s] - 문자열 [%d] - 정수 [%f] - 부동소수점 실수
+
+name = input("이름 : ")
+age = int(input("나이 : "))
+
+print("%s은 %d세 입니다" % (name, age))
 
 print("-" * 50)
 
-# 리스트에 다중 요소 추가 [extend]
+# 고급 형식지정 문자열 [%20s] - 20칸을 차지하는 문자열 (공백을 앞에 붙임) [%-10d] - 10칸을 차지하는 숫자 (공백을 뒤에 붙임) [%.5f] - 소수점 아래 5자리까지 표시
 
-d = [1, 2, 3, 4, 5]
-print(d)
-d.extend([6, 7, 8])
-print(d)
+# [format] 을 이용한 문자열 형식화
 
-print("-" * 50)
+firstNum, secondNum = map(int, input("덧셈할 두 수를 입력 : ").split(" "))
+line = "-" * 13
 
-# 리스트의 특정위치에 요소 추가 [insert]
-
-e = [10, 20, 40, 50]
-e.insert(2, 30)
-print(e)
-e.insert(5, 60)
-print(e)
+print(
+    "{0:>10}\n{1:<5}{2:>5}\n{3}\n{4:10}".format(
+        firstNum, "+", secondNum, line, firstNum + secondNum
+    )
+)
 
 print("-" * 50)
 
-# 리스트의 특정위치에 요소 추가 [insert]
+## 함수 ##
 
-l1 = [1, 2, 7, 8]
-l2 = [1, 2, 7, 8]
-l1.insert(2, [3, 4, 5, 6])
-print(l1)
-l2[2:2] = [3, 4, 5, 6]
-print(l2)
+# [def]
 
-print("-" * 50)
 
-# 리스트 삽입 도전문제
-# 다음과 같은 리스트에 [1,3,5,7,10]
-# - 리스트의 마지막에 11을 추가
-# - 리스트의 5와 7 사이에 6을 추가
-# - 리스트의 7과 10 사이에 8,9를 추가 (단, 명령어 1개 사용)
+def twotimes(x):
+    y = x * 2
+    return y
 
-f = [1, 3, 5, 7, 10]
-f.append(11)
-f.insert(3, 6)
-f[5:5] = [8, 9]
-print(f)
+
+print(twotimes(2))
 
 print("-" * 50)
 
-# 리스트 요소 삭제 [pop] - 인덱스 위치를 찾아 제거
-
-g = [1, 2, 3, 4, 5]
-g.pop()
-print(g)
-g.pop()
-print(g)
-
-h = [1, 2, 3, 4, 5]
-h.pop(2)
-print(h)
-del h[1]
-print(h)
 
 print("-" * 50)
 
-# 리스트 요소 삭제 [remove] - 값을 찾아 제거
+## 람다 함수 (익명함수) [lambda] - lambda 매개변수 : 리턴값
+# 람다 표현식 자체 호출 시 - (lambda 매개변수 : 리턴값) (인수)
 
-i = [1, 10, 50, 2, 20]
-i.remove(50)
-print(i)
+# def
+def plus_ten(x):
+    return x + 10
 
-print("-" * 50)
 
-# ValueError 방지를 위한 코드
+print(list(map(plus_ten, [1, 2, 3])))
 
-j = [1, 32, 8, 4, 5, 7]
-print(j)
-while True:
-    data = int(input("리스트에서 삭제할 값을 입력 : "))
-    if data in j:
-        j.remove(data)
-        print(j)
-        break
-    else:
-        print("존재하지 않는 수 입니다.")
+# lambda
+print(list(map(lambda x: x + 10, [1, 2, 3])))
 
-print("-" * 50)
+# lambda + input
+print(list(map(lambda x: x + 10, map(int, input("수 입력 : ").split()))))
 
-# 리스트 정보조회 [index]
+# 람다 함수에는 조건식도 넣을 수 있다
 
-k = [10, 20, 30, 40, 50]
-print(k.index(40))
+oneToTen = list(range(1, 11))
 
-print("-" * 50)
-
-# 리스트 도전문제
-# 다음과 같은 리스트 lista = [1,2,3,4,5,6,7,8]
-# - 사용자에게 값을 입력 받고, 해당 값의 인덱스 값을 출력
-# - 존재하지 않는 수라면 '값이 리스트에 없습니다'를 출력
-
-lista = [1, 2, 3, 4, 5, 6, 7, 8]
-key = None
-
-while [True]:
-    key = int(input("찾아낼 값을 입력 : "))
-
-    if key in lista:
-        print(lista.index(key))
-        break
-    else:
-        print("값이 리스트에 없습니다")
-
-print("-" * 50)
-
-# 찾으려는 값이 여러개라면 [index]를 사용한다면 가장 작은 인덱스 값이 나옴
-
-l = [10, 10, 20, 30, 30, 30, 40]
-print(l.index(10))
-
-print("-" * 50)
-
-# 특정 값의 갯수 구하기 [count]
-
-m = [1, 2, 3, 3, 4, 5, 6, 4, 4]
-print(m.count(4))
-
-print("-" * 50)
-
-# 리스트 오름,내림차 순으로 정렬
-
-n = [6, 7, 8, 2, 1, 5, 4, 3]
-n.sort()  # 오름차순
-print(n)
-n.sort(reverse=True)  # 내림차순
-print(n)
-
-print("-" * 50)
-
-# 리스트를 반대로 뒤집기
-
-n.reverse()
-print(n)
-
-print("-" * 50)
-
-# 리스트 종합 도전문제
-# 다음과 같은 리스트 존재 test = [3,6,2,1,7,8,9,3,2,6,7,5,2]
-# 사용자에게 값을 입력 받고 입력 값이 리스트에 있다면 인덱스 값을 출력
-# 사용자가 입력한 값이 리스트에 여러 개 존재한다면 몇개가 있는지 출력
-# 사용자가 입력한 값이 리스트에 없는 경우는 '값이 존재하지 않습니다' 라고 출력한다
-
-test = [3, 6, 2, 1, 7, 8, 9, 3, 2, 6, 7, 5, 2]
-key = None
-
-while [True]:
-    key = int(input("값을 입력 : "))
-
-    if key in test:
-        if test.count(key) > 1:
-            print(test.count(key), "개")
-            break
-        else:
-            print(test.index(key))
-            break
-    else:
-        print("값이 존재하지 않습니다")
-
-print("-" * 50)
-
-# 리스트의 할당 - EX) a = [1,2,3] | b = a
-# 리스트의 할당은 한 메모리의 구조를 공유하는 형태
-
-o = [1, 2, 3, 4, 5]
-p = o
-print(id(o))  # ┬────────────── 메모리 주소값을 찾는 메소드 (할당이라 주소가 같음)
-print(id(p))  # ┘
-print(o)
-print(p)
-p[3] = 40
-print(o)
-print(p)
-
-print("-" * 50)
-
-# 리스트의 복사 - EX) a = [1,2,3] | b = a.copy()
-
-q = [1, 2, 3, 4, 5]
-r = q.copy()
-print(id(q))
-print(id(r))
-print(q)
-print(r)
-r[3] = 400
-print(q)
-print(r)
-
-print("-" * 50)
-
-# 리스트 내용을 모두 삭제 [clear]
-
-s = [1, 2, 3, 4, 5]
-t = [4, 5, 6, 7, 8]
-s.clear()
-del t[:]
-print(s)
-print(t)
-
-print("-" * 50)
-
-# 2차원 리스트
-
-u = [[10, 20], [30, 40], [50, 60]]
-print(u)
-print(u[0][0])
-print(u[1][1])
-print(u[2][1])
-u[1][0] = 88
-print(u)
-
-print("-" * 50)
-
-# 불규칙 2차원 리스트 & 동적 추가
-
-v = [[10, 20, 30], [40, 50], [60, 70, 80, 90]]
-print(v)
-
-v[0].append(111)
-print(v)
-
-v[0].append(222)
-print(v)
-
-v[2].extend([333, 444])
-print(v)
-
-print("-" * 50)
-
-# 2차원 리스트 도전문제
-# - 5명의 이름, 전화번호, 나이를 입력 받아서 2차원 리스트에 저장하는 프로그램 작성
-# - 5명의 이름은 반복문으로 처리
-
-w = []
-temp1 = temp2 = temp3 = None
-
-for i in range(5):
-    temp1, temp2, temp3 = input("[이름] [전화번호] [나이] : ").split(" ")
-    w.append([temp1, int(temp2), int(temp3)])
-
-for i in range(5):
-    print(w[i])
-
-print("-" * 50)
-
-# 불규칙한 모양의 2차원 리스트 자료 모두 출력
-
-x = [[1, 2, 3], [4, 5], [6, 7, 8, 9, 10]]
-
-for i in range(len(x)):
-    for j in range(len(x[i])):
-        print(x[i][j], end=" ")
-    print()
-
-print("-" * 50)
-
-# 집합 자료형 [set]
-# - 순서가 없음
-# - 중복을 허용 X
-
-aa = set([1, 2, 3, 4, 5])
-bb = set("love")
-cc = set()
-dd = set("I love you")
-
-ran = [8, 1, 6, 4, 8, 4, 6, 5, 4, 8, 7, 6]
-
-print("aa = ", aa)
-print("bb = ", bb)
-print("cc = ", cc)
-print("dd = ", dd, "\n")
-
-print("-" * 50)
-
-# 중복 제거 [set]
-
-print("ran = ", ran)
-print("중복 제거 : set(ran) = ", set(ran))
-
-print("-" * 50)
-
-# 합집함, 교집합, 차집합
-# - [intersection] [union] [difference]
-# - [     |      ] [  &  ] [    -     ]
-
-y = set([1, 2, 3, 4, 5, 6, 7, 8, 9])
-z = set([3, 6, 9, 12, 15])
-
-print("y이 %s 이고 z이 %s 일때, " % (y, z))
-
-print("y와 z의 합집합은 ", y | z)  #     y.intersection(z)
-print("y와 z의 교집합은 ", y & z)  #     y.union(z)
-print("y와 z의 차집합은 ", y - z)  #     y.difference(z)
-print("z와 y의 차집합은 ", y - z)  #     z.difference(y)
-
-print("-" * 50)
-
-# 집합 자료형에 값 추가, 제거
-
-y.add(10)
-print(y)
-y.update([11, 12, 13])
-print(y)
-y.remove(13)
-print(y)
+print(list(map(lambda x: str(x) if x % 2 == 0 else x, oneToTen)))

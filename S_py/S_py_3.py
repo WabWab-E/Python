@@ -1,148 +1,248 @@
-# 조건문 도전문제
-# 두 수를 입력 받아서 더한 값이 100 이상이면, '100 이상입니다.' 라고 출력하는 프로그램.
+# 리스트에 요소 추가 (리스트 중첩, 접근) [append]
 
-print("조건문 도전문제")
-
-a = int(input("첫 번째 값 : "))
-b = int(input("두 번째 값 : "))
-
-if a + b >= 100:
-    print("100 이상입니다.")
-
-print("-------------------------------------------------------")
-
-# 조건문 중첩 도전문제
-# 두 수를 입력 받아서 더한 값이 100 이상이면, '100 이상입니다.' 라고 출력한다.
-# 두 수의 합이 100 미만이라면 '100 미만입니다.' 라고 출력한다
-
-print("조건문 중첩 도전문제")
-
-c = int(input("첫 번째 값 : "))
-d = int(input("두 번째 값 : "))
-
-if a + b >= 100:
-    print("100 이상입니다.")
-else:
-    print("100 미만입니다.")
-
-print("-------------------------------------------------------")
-
-
-# 3개 이상의 분기문 도전문제
-# 몇 시인지 입력받고 8 ~ 9 사이라면 아침, 11 ~ 13 사이라면 점심, 17 ~ 20 사이라면 저녁 그 외는 식사시간 아님 출력
-
-e = int(input("시간을 입력하세요 : "))
-
-if 8 <= e <= 9:
-    print("아침식사시간")
-elif 11 <= e <= 13:
-    print("점심식사시간")
-elif 17 <= e <= 20:
-    print("저녁식사시간")
-else:
-    print("식사시간 아님")
-
-print("-------------------------------------------------------")
-
-# 종합 도전문제 1
-# 생년월일 입력
-# 입력받은 생년월일을 연, 월, 일로 나눠서 출력
-# 20세기 인간, 21세기 인간 구별
-
-f = input()
-
-year, month, day = f[0:4], f[4:6], f[6:8]
-
-print(year, "년")
-print(month, "월")
-print(day, "일")
-
-if int(year) >= 2000:
-    print("21세기 인간")
-else:
-    print("20세기 인간")
-
-print("-------------------------------------------------------")
-
-# 종합 도전문제 2
-# 코드 게이트 입장료 계산 [개인] : 50000원 [단체] : 10000원
-# 단체는 10인 이상부터...
-
-g = int(input("입장 인원을 입력하세요 : "))
-
-if g < 10:
-    print("단체할인 미적용 ", g * 50000, "원 입니다.")
-else:
-    print("단체할인 적용 ", g * 10000, "원 입니다.")
-
-print("-------------------------------------------------------")
-
-# 반복문 도전문제
-# 숫자 5개를 입력받고 입력 받은 수 중에서 가장 큰 수를 출력
-
-#### 1 #### - [for문 + max]
-
-listA = [0, 0, 0, 0, 0]
-
-for i in range(len(listA)):
-    listA[i] = int(input("5개의 수를 입력 : "))
-
-print(max(listA))
+a = [1, 2, 3]
+b = [4, 5, 6]
+c = [7, 8, 9]
+a.append(b)
+b.append(c)
+print(a)
+print(a[3])
+print(a[3][3])
 
 print("-" * 50)
 
-#### 2 #### - [for(append) + max]
+# 리스트에 다중 요소 추가 [extend]
 
-listB = [0, 0, 0, 0, 0]
-
-for i in range(len(listB)):
-    listB.append(int(input("5개의 수를 입력 : ")))
-
-print(max(listB))
+d = [1, 2, 3, 4, 5]
+print(d)
+d.extend([6, 7, 8])
+print(d)
 
 print("-" * 50)
 
-#### 3 #### - [map,split함수 + max함수]
+# 리스트의 특정위치에 요소 추가 [insert]
 
-listC = [0, 0, 0, 0, 0]
+e = [10, 20, 40, 50]
+e.insert(2, 30)
+print(e)
+e.insert(5, 60)
+print(e)
 
-listC = map(int, input("5개의 수를 입력 (예시 - 1,2,3,4,5) : ").split(","))
+print("-" * 50)
 
-print(max(listC))
+# 리스트의 특정위치에 요소 추가 [insert]
 
-#### 4 #### - [Algorithm]
+l1 = [1, 2, 7, 8]
+l2 = [1, 2, 7, 8]
+l1.insert(2, [3, 4, 5, 6])
+print(l1)
+l2[2:2] = [3, 4, 5, 6]
+print(l2)
 
-listD = [0, 0, 0, 0, 0]
-max_num = 0
+print("-" * 50)
 
-for i in range(len(listD)):
-    listD[i] = int(input("5개의 수를 입력 : "))
+# 리스트 요소 삭제 [pop] - 인덱스 위치를 찾아 제거
 
-for j in range(len(listD)):
+g = [1, 2, 3, 4, 5]
+g.pop()
+print(g)
+g.pop()
+print(g)
 
-    if max_num < listD[i]:
-        max_num = listD[i]
+h = [1, 2, 3, 4, 5]
+h.pop(2)
+print(h)
+del h[1]
+print(h)
 
-print(max_num)
+print("-" * 50)
 
-# 반복문, 리스트 도전문제
-# 다음과 같은 리스트 중 sangmi = ['현찬','화준','상욱','승현','현빈']
-# 사용자에게 이름을 입력 받고 리스트에 일치하는 이름이 있다면 몇 번째에 있는 지 출력
-# 없다면 '리스트에 없는 이름입니다' 라고 출력
+# 리스트 요소 삭제 [remove] - 값을 찾아 제거
 
-sangmi = ["현찬", "화준", "상욱", "승현", "현빈"]
+i = [1, 10, 50, 2, 20]
+i.remove(50)
+print(i)
 
-k = input("이름을 입력 : ")
-l = 0
+print("-" * 50)
 
-for i in sangmi:
-    if k == i:
-        l += 1
+# ValueError 방지를 위한 코드
+
+j = [1, 32, 8, 4, 5, 7]
+print(j)
+while True:
+    data = int(input("리스트에서 삭제할 값을 입력 : "))
+    if data in j:
+        j.remove(data)
+        print(j)
         break
     else:
-        l += 1
+        print("존재하지 않는 수 입니다.")
 
-if l > 5:
-    print("리스트에 없는 이름입니다.")
-else:
-    print(l, "번째에 존재!")
+print("-" * 50)
+
+# 리스트 정보조회 [index]
+
+k = [10, 20, 30, 40, 50]
+print(k.index(40))
+
+print("-" * 50)
+
+# 찾으려는 값이 여러개라면 [index]를 사용한다면 가장 작은 인덱스 값이 나옴
+
+l = [10, 10, 20, 30, 30, 30, 40]
+print(l.index(10))
+
+print("-" * 50)
+
+# 특정 값의 갯수 구하기 [count]
+
+m = [1, 2, 3, 3, 4, 5, 6, 4, 4]
+print(m.count(4))
+
+print("-" * 50)
+
+# 리스트 오름,내림차 순으로 정렬
+
+n = [6, 7, 8, 2, 1, 5, 4, 3]
+n.sort()  # 오름차순
+print(n)
+n.sort(reverse=True)  # 내림차순
+print(n)
+
+print("-" * 50)
+
+# 리스트를 반대로 뒤집기
+
+n.reverse()
+print(n)
+
+print("-" * 50)
+
+# 리스트의 할당 - EX) a = [1,2,3] | b = a
+# 리스트의 할당은 한 메모리의 구조를 공유하는 형태
+
+o = [1, 2, 3, 4, 5]
+p = o
+print(id(o))  # ┬────────────── 메모리 주소값을 찾는 메소드 (할당이라 주소가 같음)
+print(id(p))  # ┘
+print(o)
+print(p)
+p[3] = 40
+print(o)
+print(p)
+
+print("-" * 50)
+
+# 리스트의 복사 - EX) a = [1,2,3] | b = a.copy()
+
+q = [1, 2, 3, 4, 5]
+r = q.copy()
+print(id(q))
+print(id(r))
+print(q)
+print(r)
+r[3] = 400
+print(q)
+print(r)
+
+print("-" * 50)
+
+# 리스트 내용을 모두 삭제 [clear]
+
+s = [1, 2, 3, 4, 5]
+t = [4, 5, 6, 7, 8]
+s.clear()
+del t[:]
+print(s)
+print(t)
+
+print("-" * 50)
+
+# 2차원 리스트
+
+u = [[10, 20], [30, 40], [50, 60]]
+print(u)
+print(u[0][0])
+print(u[1][1])
+print(u[2][1])
+u[1][0] = 88
+print(u)
+
+print("-" * 50)
+
+# 불규칙 2차원 리스트 & 동적 추가
+
+v = [[10, 20, 30], [40, 50], [60, 70, 80, 90]]
+print(v)
+
+v[0].append(111)
+print(v)
+
+v[0].append(222)
+print(v)
+
+v[2].extend([333, 444])
+print(v)
+
+print("-" * 50)
+
+# 불규칙한 모양의 2차원 리스트 자료 모두 출력
+
+x = [[1, 2, 3], [4, 5], [6, 7, 8, 9, 10]]
+
+for i in range(len(x)):
+    for j in range(len(x[i])):
+        print(x[i][j], end=" ")
+    print()
+
+print("-" * 50)
+
+# 집합 자료형 [set]
+# - 순서가 없음
+# - 중복을 허용 X
+
+aa = set([1, 2, 3, 4, 5])
+bb = set("love")
+cc = set()
+dd = set("I love you")
+
+ran = [8, 1, 6, 4, 8, 4, 6, 5, 4, 8, 7, 6]
+
+print("aa = ", aa)
+print("bb = ", bb)
+print("cc = ", cc)
+print("dd = ", dd, "\n")
+
+print("-" * 50)
+
+# 중복 제거 [set]
+
+print("ran = ", ran)
+print("중복 제거 : set(ran) = ", set(ran))
+
+print("-" * 50)
+
+# 합집함, 교집합, 차집합
+# - [intersection] [union] [difference]
+# - [     |      ] [  &  ] [    -     ]
+
+y = set([1, 2, 3, 4, 5, 6, 7, 8, 9])
+z = set([3, 6, 9, 12, 15])
+
+print("y이 %s 이고 z이 %s 일때, " % (y, z))
+
+print("y와 z의 합집합은 ", y | z)  #     y.intersection(z)
+print("y와 z의 교집합은 ", y & z)  #     y.union(z)
+print("y와 z의 차집합은 ", y - z)  #     y.difference(z)
+print("z와 y의 차집합은 ", y - z)  #     z.difference(y)
+
+print("-" * 50)
+
+# 집합 자료형에 값 추가, 제거
+
+y.add(10)
+print(y)
+y.update([11, 12, 13])
+print(y)
+y.remove(13)
+print(y)
