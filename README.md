@@ -1,13 +1,13 @@
 ```python
 import WabWabEs Soul
 
-S_py = "School_Python"
-S_py_C = "School_Python_Challenge"
-
-name = "Bang Hyunbeen"
-
 def Introduction() :
     print("Hello Python")
+    
+    S_py = "School_Python"
+    S_py_C = "School_Python_Challenge"
+
+    name = "Bang Hyunbeen"
 
 Introduction()
 ```
