@@ -1,4 +1,8 @@
-<img src="https://i.ibb.co/khwcxxP/Python-Logo-Github.png" alt="Python-Logo-Github" border="0"><img/>
+<center>
+    <img src="https://i.ibb.co/khwcxxP/Python-Logo-Github.png"  alt="Python-Logo-Github" border="0">
+    <img/>
+</center>
+
 ```python
 import WabWabEs Soul
 
@@ -13,7 +17,7 @@ def Introduction() :
 Introduction()
 ```
 ---
-# <center> ====== 파이썬 입니다 ====== </center>
+# ========== 파이썬 입니다 ==========
 
 ## **S_py - 학교수업**
 
