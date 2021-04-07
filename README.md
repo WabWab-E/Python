@@ -1,3 +1,4 @@
+<img src="https://i.ibb.co/khwcxxP/Python-Logo-Github.png" alt="Python-Logo-Github" border="0"><img/>
 ```python
 import WabWabEs Soul
 
@@ -7,11 +8,11 @@ def Introduction() :
     S_py = "School_Python"
     S_py_C = "School_Python_Challenge"
 
-    name = "Bang Hyunbeen"
+    Name = "Bang Hyunbeen"
 
 Introduction()
 ```
-
+---
 # <center> ====== 파이썬 입니다 ====== </center>
 
 ## **S_py - 학교수업**
