@@ -1,8 +1,3 @@
-<center>
-    <img src="https://i.ibb.co/khwcxxP/Python-Logo-Github.png"  alt="Python-Logo-Github" border="0">
-    <img/>
-</center>
-
 ```python
 import WabWabEs Soul
 
@@ -16,8 +11,14 @@ def Introduction() :
 
 Introduction()
 ```
----
-# ========== 파이썬 입니다 ==========
+
+<p align="center">
+    <img src="https://i.ibb.co/khwcxxP/Python-Logo-Github.png" alt="Python-Logo-Github" width="100%"><img/>
+</p>
+
+
+# 파이썬
+✨학교에서 처음 입문하는 파이썬✨
 
 ## **S_py - 학교수업**
 
