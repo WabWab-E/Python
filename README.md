@@ -13,7 +13,7 @@ Introduction()
 ```
 
 <p align="center">
-    <img src="https://i.ibb.co/MG6fhGr/Python-Logo-Github.png" alt="Python-Logo-Github" width="100%"><img/>
+    <img src="https://i.ibb.co/z57nwBq/Python-Logo-Github.png" alt="Python-Logo-Github" width="100%"><img/>
 </p>
 
 
