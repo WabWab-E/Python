@@ -4,10 +4,10 @@ import WabWabEs Soul
 def Introduction() :
     print("Hello Python")
     
-    S_py = "School_Python"
-    S_py_C = "School_Python_Challenge"
+    Name   = "Bang Hyunbeen"
 
-    Name = "Bang Hyunbeen"
+    S_py   = "School_Python"
+    S_py_C = "School_Python_Challenge"
 
 Introduction()
 ```
