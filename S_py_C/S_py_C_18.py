@@ -4,6 +4,8 @@
 
 
 #### 1 #### - 윤년, 평년
+
+
 def LY_NY(year):
     leap_YR = "윤년"
     normal_YR = "평년"
@@ -20,6 +22,7 @@ def LY_NY(year):
 
 
 #### 2 #### - 한 달의 일 수
+
 
 thirty = [4, 6, 9, 11]
 thirtyOne = [1, 3, 5, 7, 8, 10, 12]
