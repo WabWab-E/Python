@@ -16,4 +16,3 @@ num = int(input("홀? 짝? : "))
 
 print(oddOReven(num))
 
-print("-" * 50)
