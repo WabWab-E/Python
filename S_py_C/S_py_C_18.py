@@ -33,6 +33,8 @@ def days(month):
         return 30
     elif month in thirtyOne:
         return 31
+    elif month > 12:
+        return "Error : 월 입력 오류"
     else:
         return 28
 
