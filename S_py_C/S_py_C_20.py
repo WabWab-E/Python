@@ -4,10 +4,10 @@
 
 
 def diffSum(x, y, z):
-    if (x + y + z) > (x ** 2 + y ** 2 + z ** 2):
-        return (x + y + z) - (x ** 2 + y ** 2 + z ** 2)
-    else:
-        return (x ** 2 + y ** 2 + z ** 2) - (x + y + z)
+    numSum = x + y + z
+    squareSum = (x ** 2) + (y ** 2) + (z ** 2)
+
+    return abs(numSum - squareSum)
 
 
 x, y, z = map(int, input("3개의 수 입력 : ").split(" "))

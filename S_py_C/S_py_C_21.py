@@ -4,21 +4,15 @@
 
 m = 0
 
-xx, yy, zz = map(int, input("3개의 수 입력 : ").split(" "))
-
 
 def diffSum(x, y, z):
-    result = 0
+    numSum = x + y + z
+    squareSum = (x ** 2) + (y ** 2) + (z ** 2)
 
-    if (x + y + z) > (x ** 2 + y ** 2 + z ** 2):
-        result = (x + y + z) - (x ** 2 + y ** 2 + z ** 2)
-        diffSum2(result)
-        return result
+    rv = abs(numSum - squareSum)
 
-    else:
-        result = (x ** 2 + y ** 2 + z ** 2) - (x + y + z)
-        diffSum2(result)
-        return result
+    diffSum2(rv)
+    return rv
 
 
 def diffSum2(x):
@@ -26,10 +20,16 @@ def diffSum2(x):
 
     if x > m:
         m = x
-        return
-    else:
-        return
+
+    print("현재 수 : ", x, end=" ")
 
 
-diffSum(xx, yy, zz)
-print(m)
+while True:
+    xx, yy, zz = map(int, input("3개의 수 입력 : ").split(" "))
+
+    if xx + yy + zz == 0:
+        print("종료")
+        break
+    diffSum(xx, yy, zz)
+
+    print("가장 컸던 수 : ", m)
