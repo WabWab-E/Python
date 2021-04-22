@@ -33,8 +33,10 @@ def days(month):
         return 30
     elif month in thirtyOne:
         return 31
-    else:
+    elif month == 2:
         return 28
+    else:
+        return "Error : 월 입력 오류"
 
 
 #### 3 #### - 종합
@@ -44,25 +46,27 @@ thirty = [4, 6, 9, 11]
 thirtyOne = [1, 3, 5, 7, 8, 10, 12]
 
 
-def LYNY_Days(x, y):
+def LYNY_Days(year, month):
     is_Leap_year = False
 
-    if x % 4 == 0:
+    if year % 4 == 0:
         is_Leap_year = True
-    elif x % 100 == 0:
+    elif year % 100 == 0:
         is_Leap_year = True
-        if x % 400 == 0:
+        if year % 400 == 0:
             is_Leap_year = True
 
-    if y in thirty:
+    if month in thirty:
         return 30
-    elif y in thirtyOne:
+    elif month in thirtyOne:
         return 31
-    else:
+    elif month == 2:
         if is_Leap_year:
             return 29
         else:
             return 28
+    else:
+        print("Error : 월 입력 오류")
 
 
 year, month = map(int, input("년 월 : ").split())

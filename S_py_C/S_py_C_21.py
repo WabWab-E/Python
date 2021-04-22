@@ -4,32 +4,32 @@
 
 m = 0
 
-xx, yy, zz = map(int, input("3개의 수 입력 : ").split(" "))
-
 
 def diffSum(x, y, z):
-    result = 0
+    numSum = x + y + z
+    squareSum = (x ** 2) + (y ** 2) + (z ** 2)
 
-    if (x + y + z) > (x ** 2 + y ** 2 + z ** 2):
-        result = (x + y + z) - (x ** 2 + y ** 2 + z ** 2)
-        diffSum2(result)
-        return result
-
-    else:
-        result = (x ** 2 + y ** 2 + z ** 2) - (x + y + z)
-        diffSum2(result)
-        return result
+    return abs(numSum - squareSum)
 
 
 def diffSum2(x):
+    # global이 없다면 diffSum2 내부의 'm'값만 변환되며 함수 밖에 있는 'm'에는 전혀 영향이 없다
     global m
 
     if x > m:
         m = x
-        return
-    else:
-        return
+
+    print("현재 수 : ", x, end=" | ")
 
 
-diffSum(xx, yy, zz)
-print(m)
+while True:
+    xx, yy, zz = map(int, input("3개의 수 입력 : ").split(" "))
+
+    # 3개의 값 모두 0을 입력하면 프로그램 종료
+    if xx == yy == zz == 0:
+        print("종료")
+        break
+
+    diffSum2(diffSum(xx, yy, zz))
+
+    print("가장 컸던 수 : ", m)
